@@ -10,7 +10,7 @@ python:
 #
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install python-cracklib
+  - sudo apt-get install python-cracklib libcrack2-dev
 install: 
   - pip install -e .
   - "if [[ $TEST_PEP8 == '1' ]]; then pip install pep8; fi"
