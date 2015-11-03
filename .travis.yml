@@ -14,7 +14,6 @@ before_install:
 install: 
   - pip install -e .
   - "if [[ $TEST_PEP8 == '1' ]]; then pip install pep8; fi"
-  - pip install cracklib
   - pip install coveralls
 # command to run tests
 script: 
