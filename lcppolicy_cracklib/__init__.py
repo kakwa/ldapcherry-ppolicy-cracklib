@@ -39,9 +39,10 @@ class PPolicy(ldapcherry.ppolicy.PPolicy):
             except ValueError as e:
                 return
             except:
-                WrongParamValue('dict_path',
+                WrongParamValue(
+                    'dict_path',
                     'ppolicy',
-                    ['<path to valid dictionary file>']
+                    ['<path to valid dictionary file>'],
                     )
 
     def check(self, password):
