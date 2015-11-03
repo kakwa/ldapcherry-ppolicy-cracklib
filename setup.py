@@ -3,7 +3,7 @@ import os
 import sys
 from distutils.core import setup
 
-install_requires=['ldapcherry', 'cracklib']
+install_requires = ['ldapcherry', 'cracklib']
 
 try:
     f = open(os.path.join(os.path.dirname(__file__), 'README.rst'))
@@ -40,15 +40,15 @@ except ImportError:
 
 
 setup(
-    name = 'lcppolicy_cracklib',
-    version = '0.1.0',
-    author = 'Pierre-Francois Carpentier',
-    author_email = 'carpentier.pf@gmail.com',
-    packages = ['lcppolicy_cracklib'],
-    url = 'https://github.com/kakwa/ldapcherry-ppolicy-cracklib',
-    license = license,
-    description = 'A simple python lib to print data as ascii histograms.',
-    long_description = description,
+    name='lcppolicy_cracklib',
+    version='0.1.0',
+    author='Pierre-Francois Carpentier',
+    author_email='carpentier.pf@gmail.com',
+    packages=['lcppolicy_cracklib'],
+    url='https://github.com/kakwa/ldapcherry-ppolicy-cracklib',
+    license=license,
+    description='Cracklib password policy plugin for LdapCherry.',
+    long_description=description,
     install_requires=install_requires,
     tests_require=['pytest'],
     cmdclass={'test': PyTest},
@@ -59,8 +59,5 @@ setup(
         'Environment :: Console',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.2',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4']
+        'Programming Language :: Python :: 2.7']
 )

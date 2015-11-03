@@ -35,15 +35,18 @@ class PPolicy(ldapcherry.ppolicy.PPolicy):
         self.dict_path = self.get_param('dict_path', None)
         if self.dict_path is not None:
             try:
-                cracklib.VeryFascistCheck('test', dictpath = self.dict_path)
+                cracklib.VeryFascistCheck('test', dictpath=self.dict_path)
             except ValueError as e:
                 return
             except:
-                WrongParamValue('dict_path', 'ppolicy', ['<path to valid dictionary file>'])
+                WrongParamValue('dict_path',
+                    'ppolicy',
+                    ['<path to valid dictionary file>']
+                    )
 
     def check(self, password):
         try:
-            cracklib.VeryFascistCheck(password, dictpath = self.dict_path)
+            cracklib.VeryFascistCheck(password, dictpath=self.dict_path)
         except ValueError as e:
             return {'match': False, 'reason': str(e)}
         return {'match': True, 'reason': 'password ok'}
