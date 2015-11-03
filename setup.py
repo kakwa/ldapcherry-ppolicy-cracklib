@@ -3,6 +3,7 @@ import os
 import sys
 from distutils.core import setup
 
+install_requires=['ldapcherry', 'cracklib']
 
 try:
     f = open(os.path.join(os.path.dirname(__file__), 'README.rst'))
@@ -48,7 +49,7 @@ setup(
     license = license,
     description = 'A simple python lib to print data as ascii histograms.',
     long_description = description,
-    install_requires = [],
+    install_requires=install_requires,
     tests_require=['pytest'],
     cmdclass={'test': PyTest},
     classifiers=[
