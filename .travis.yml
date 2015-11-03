@@ -1,5 +1,6 @@
 env:
   - TRAVIS="yes"
+  - SYSCONRDIR="/tmp/ldapcherry/"
 
 language: python
 python:
