@@ -15,13 +15,9 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install python-cracklib libcrack2-dev
 install: 
-  - pip install -e .
-  - "if [[ $TEST_PEP8 == '1' ]]; then pip install pep8; fi"
+  - "if [[ $TEST_PEP8 == '1' ]]; then pip install pep8; else pip install -e . ;fi"
   - pip install coveralls
 # command to run tests
-script: 
-  - coverage run --source=lcppolicy_cracklib setup.py test
-  - "if [[ $TEST_HIREDIS == '1' ]]; then pip install hiredis; fi"
 script: "if [[ $TEST_PEP8 == '1' ]]; then pep8 --repeat --show-source --exclude=.venv,.tox,dist,docs,build,*.egg,tests,misc,setup.py .; else coverage run --source=lcppolicy_cracklib setup.py test; fi"
 after_success:
   - coveralls
