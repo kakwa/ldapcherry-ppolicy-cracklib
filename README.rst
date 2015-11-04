@@ -10,12 +10,12 @@ Cracklib password policy plugin for LdapCherry
 .. image:: https://coveralls.io/repos/kakwa/ldapcherry-ppolicy-cracklib/badge.svg 
     :target: https://coveralls.io/r/kakwa/ldapcherry-ppolicy-cracklib
 
-.. image:: https://img.shields.io/pypi/dm/ldapcherry-ppolicy-cracklib.svg
-    :target: https://pypi.python.org/pypi/ldapcherry-ppolicy-cracklib
+.. image:: https://img.shields.io/pypi/dm/lcppolicy_cracklib.svg
+    :target: https://pypi.python.org/pypi/lcppolicy_cracklib
     :alt: Number of PyPI downloads
     
-.. image:: https://img.shields.io/pypi/v/ldapcherry-ppolicy-cracklib.svg
-    :target: https://pypi.python.org/pypi/ldapcherry-ppolicy-cracklib
+.. image:: https://img.shields.io/pypi/v/lcppolicy_cracklib.svg
+    :target: https://pypi.python.org/pypi/lcppolicy_cracklib
     :alt: PyPI version
 
 .. image:: https://readthedocs.org/projects/ldapcherry-ppolicy-cracklib/badge/?version=latest

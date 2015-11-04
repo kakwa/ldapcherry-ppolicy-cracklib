@@ -90,4 +90,3 @@ class PPolicy(ldapcherry.ppolicy.PPolicy):
             error = re.sub(r'^[iI][tT] ', '', error)
             return {'match': False, 'reason': 'Password ' + error}
         return {'match': True, 'reason': 'Password ok'}
-
