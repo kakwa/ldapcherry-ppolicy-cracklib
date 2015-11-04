@@ -11,6 +11,7 @@ import cherrypy
 import logging
 import os
 from ldapcherry.exceptions import *
+from disable import travis_disabled
 
 def syslog_error(msg='', context='',
         severity=logging.INFO, traceback=False):
@@ -132,6 +133,7 @@ class TestLib(object):
        else:
            raise AssertionError("expected an exception")
 
+   @travis_disabled
    def test_dictFalse(self):
        try:
            ppolicy = lcppolicy_cracklib.PPolicy(config_falsedict, cherrypy.log)
