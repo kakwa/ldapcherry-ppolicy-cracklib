@@ -13,14 +13,14 @@ python:
 #
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install libcrack2-dev
+  - sudo apt-get install libcrack2-dev strace
 install: 
   - "if [[ $TEST_PEP8 == '1' ]]; then pip install pep8; else pip install -e . ;fi"
   - pip install coveralls
 # command to run tests
 script: 
     - "if [[ $TEST_PEP8 == '1' ]]; then pep8 --repeat --show-source --exclude='.venv,.tox,dist,docs,build,*.egg,tests,misc,setup.py' . ;fi"
-    - "if [[ $TEST_PEP8 != '1' ]]; then python setup.py test;fi"
+    - "if [[ $TEST_PEP8 != '1' ]]; then strace -f python setup.py test;fi"
 after_success:
   - coveralls
 after_failure:
