@@ -54,11 +54,10 @@ Configure
 | min_other  | ppolicy | Minimum number of non alphanumeric      | Integer | Default: 0                                   |
 |            |         | characters                              |         |                                              |
 +------------+---------+-----------------------------------------+---------+----------------------------------------------+
-| dict_path  | ppolicy | Path to dictionnary                     | Path    | Default: default cracklib dict             |
+| dict_path  | ppolicy | Path to dictionnary                     | Path    | Default: default cracklib dict               |
 |            |         |                                         |         | usually '/var/cache/cracklib/cracklib_dict'. |
 |            |         |                                         |         |                                              |
-
-|            |         |                                         |         | If pointing to /path/dict, /path/dict.hwm  |
+|            |         |                                         |         | If pointing to /path/dict, /path/dict.hwm    |
 |            |         |                                         |         | /path/dict.pwd and /path/dict.pwi must       |
 |            |         |                                         |         | exist.                                       |
 +------------+---------+-----------------------------------------+---------+----------------------------------------------+
