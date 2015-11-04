@@ -40,26 +40,26 @@ From sources:
 Configure
 =========
 
-+------------+---------+-----------------------------------------+---------+---------------------------------------------+
-| Parameter  | Section |            Description                  | Values  |                Comment                      |
-+============+=========+=========================================+=========+=============================================+
-| min_length | ppolicy | Minimum length of password              | integer | Default: 0                                  |
-+------------+---------+-----------------------------------------+---------+---------------------------------------------+
-| min_upper  | ppolicy | Minimum number of upper case characters | Integer | Default: 0                                  |
-+------------+---------+-----------------------------------------+---------+---------------------------------------------+
-| min_digit  | ppolicy | Minimum number of digit characters      | Integer | Default: 0                                  |
-+------------+---------+-----------------------------------------+---------+---------------------------------------------+
-| min_lower  | ppolicy | Minimum number of lower case characters | Integer | Default: 0                                  |
-+------------+---------+-----------------------------------------+---------+---------------------------------------------+
-| min_other  | ppolicy | Minimum number of non alphanumeric      | Integer | Default: 0                                  |
-|            |         | characters                              |         |                                             |
-+------------+---------+-----------------------------------------+---------+---------------------------------------------+
-| dict_path  | ppolicy | Path to dictionnary                     | Path    | Default: default cracklib dict              |
-|            |         |                                         |         | usually '/var/cache/cracklib/cracklib_dict' |
-|            |         |                                         |         | If pointing to /path/dict, /path/dict.hwm   |
-|            |         |                                         |         | /path/dict.pwd and /path/dict.pwi must      |
-|            |         |                                         |         | exist                                       |
-+------------+---------+-----------------------------------------+---------+---------------------------------------------+
++------------+---------+-----------------------------------------+---------+----------------------------------------------+
+| Parameter  | Section |            Description                  | Values  |                Comment                       |
++============+=========+=========================================+=========+==============================================+
+| min_length | ppolicy | Minimum length of password              | integer | Default: 0                                   |
++------------+---------+-----------------------------------------+---------+----------------------------------------------+
+| min_upper  | ppolicy | Minimum number of upper case characters | Integer | Default: 0                                   |
++------------+---------+-----------------------------------------+---------+----------------------------------------------+
+| min_digit  | ppolicy | Minimum number of digit characters      | Integer | Default: 0                                   |
++------------+---------+-----------------------------------------+---------+----------------------------------------------+
+| min_lower  | ppolicy | Minimum number of lower case characters | Integer | Default: 0                                   |
++------------+---------+-----------------------------------------+---------+----------------------------------------------+
+| min_other  | ppolicy | Minimum number of non alphanumeric      | Integer | Default: 0                                   |
+|            |         | characters                              |         |                                              |
++------------+---------+-----------------------------------------+---------+----------------------------------------------+
+| dict_path  | ppolicy | Path to dictionnary                     | Path    | * Default: default cracklib dict             |
+|            |         |                                         |         | usually '/var/cache/cracklib/cracklib_dict'. |
+|            |         |                                         |         | * If pointing to /path/dict, /path/dict.hwm  |
+|            |         |                                         |         | /path/dict.pwd and /path/dict.pwi must       |
+|            |         |                                         |         | exist.                                       |
++------------+---------+-----------------------------------------+---------+----------------------------------------------+
 
 Add the following parameters in **[ppolicy]** section of ldapcherry.ini:
 
