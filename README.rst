@@ -111,19 +111,19 @@ Custom dictionary
 
 To build custom cracklib dictionaries:
 
-* Get one or many word list files (for example here: http://www.winedt.org/Dict/)
-* If necessary encode it to UTF-8
-* Generate the cracklib dictionary
+* Get one or many word list files (for example here: http://www.winedt.org/Dict/).
+* If necessary, encode it to UTF-8.
+* Generate the cracklib dictionary.
 
 example:
 
 .. sourcecode:: bash
     
-    # just create a work directory
+    # Just create a work directory
     $ mkdir dict/
     $ cd dict/
 
-    # recover and unzip the word list
+    # Recover and unzip the word list
     $ wget http://www.winedt.org/Dict/unicode/fr.zip
     $ unzip fr.zip
 
@@ -134,10 +134,10 @@ example:
     fr.zip: Zip archive data, at least v2.0 to extract
     $ iconv -f UTF-16 -t UTF-8 fr.dic >fr2.dic
 
-    # create the dictionary
+    # Create the dictionary
     $ cat fr2.dic | cracklib-packer mydict
 
-    # result
+    # Result
     $ ls mydict*
     mydict.hwm  mydict.pwd  mydict.pwi
 
