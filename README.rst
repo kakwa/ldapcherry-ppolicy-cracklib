@@ -22,6 +22,17 @@ Cracklib password policy plugin for LdapCherry
     :target: http://ldapcherry-ppolicy-cracklib.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
 
+----
+
+:Doc:    `Documentation on ReadTheDoc <http://ldapcherry-ppolicy-cracklib.readthedocs.org/en/latest/>`_
+:Dev:    `Source code on GitHub <https://github.com/kakwa/ldapcherry-ppolicy-cracklib>`_
+:PyPI:   `Package on Pypi <http://pypi.python.org/pypi/lcppolicy_cracklib>`_
+:License: MIT
+:Author:  Pierre-Francois Carpentier - copyright © 2015
+
+----
+
+
 Install
 =======
 
