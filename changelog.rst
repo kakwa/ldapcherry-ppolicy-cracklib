@@ -1,4 +1,7 @@
 ChangeLogs
 ==========
 
-.. include:: ../CHANGES
+Dev
+***
+
+* initial version
