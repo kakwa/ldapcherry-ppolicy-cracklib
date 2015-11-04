@@ -73,7 +73,9 @@ class PPolicy(ldapcherry.ppolicy.PPolicy):
             except ValueError as e:
                 exstr = str(e)
                 if exstr == 'second argument was not an absolute path!':
-                    raise Exception('dict_path must be absolute, or not declared')
+                    raise Exception(
+                        'dict_path must be absolute, or not declared'
+                        )
                 else:
                     return
             except Exception as e:
