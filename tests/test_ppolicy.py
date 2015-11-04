@@ -140,13 +140,11 @@ class TestLib(object):
         exp = {'match': False, 'reason': 'Password it is based on a dictionary word'}
         assert exp == ret
 
-    @travis_disabled
-    def test_dictFalse(self):
-        try:
-            ppolicy = lcppolicy_cracklib.PPolicy(config_falsedict, cherrypy.log)
-        except RuntimeError:
-            return
-        else:
-            raise AssertionError("expected an exception")
-
-
+    #@travis_disabled
+    #def test_dictFalse(self):
+    #    try:
+    #        ppolicy = lcppolicy_cracklib.PPolicy(config_falsedict, cherrypy.log)
+    #    except RuntimeError:
+    #        return
+    #    else:
+    #        raise AssertionError("expected an exception")
