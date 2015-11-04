@@ -98,4 +98,42 @@ Example
 Custom dictionary
 =================
 
-To build your own cracklib dictionary:
+.. warning::
+
+    Most distributions already provide dictionaries and a cron script
+    to update cracklib dictionary (see *apt-cache search 'dictionary' | egrep '^w'* 
+    and */etc/cron.daily/cracklib-runtime* in Debian/Ubuntu for example)
+
+To build custom cracklib dictionaries:
+
+* Get one or many word list files (for example here: http://www.winedt.org/Dict/)
+* If necessary encode it to UTF-8
+* Generate the cracklib dictionnary
+
+example:
+
+.. sourcecode:: bash
+    
+    # just create a work directory
+    $ mkdir dict/
+    $ cd dict/
+
+    # recover and unzip the word list
+    $ wget http://www.winedt.org/Dict/unicode/fr.zip
+    $ unzip fr.zip
+
+    # UTF-8 encoding
+    $ file *
+    fr.dic: Little-endian UTF-16 Unicode text
+    fr.txt: ASCII text, with CRLF line terminators
+    fr.zip: Zip archive data, at least v2.0 to extract
+    $ iconv -f UTF-16 -t UTF-8 fr.dic >fr2.dic
+
+    # create the dictionnary
+    $ cat fr2.dic | cracklib-packer mydict
+
+    # result
+    $ ls mydict*
+    mydict.hwm  mydict.pwd  mydict.pwi
+
+
