@@ -116,28 +116,28 @@ class TestLib(object):
        exp = {'match': False, 'reason': 'Password is too short'}
        assert exp == ret
 
-   def test_dictNotAbsPath(self):
-       try:
-           ppolicy = lcppolicy_cracklib.PPolicy(config_errordictnotabspath, cherrypy.log)
-       except Exception as e:
-           assert str(e) == 'dict_path must be absolute, or not declared'
-       else:
-           raise AssertionError("expected an exception")
+   #def test_dictNotAbsPath(self):
+   #    try:
+   #        ppolicy = lcppolicy_cracklib.PPolicy(config_errordictnotabspath, cherrypy.log)
+   #    except Exception as e:
+   #        assert str(e) == 'dict_path must be absolute, or not declared'
+   #    else:
+   #        raise AssertionError("expected an exception")
 
-   def test_dictDoesNotExist(self):
-       try:
-           ppolicy = lcppolicy_cracklib.PPolicy(config_errordictpath, cherrypy.log)
-       except OSError:
-           return
-       else:
-           raise AssertionError("expected an exception")
+   #def test_dictDoesNotExist(self):
+   #    try:
+   #        ppolicy = lcppolicy_cracklib.PPolicy(config_errordictpath, cherrypy.log)
+   #    except OSError:
+   #        return
+   #    else:
+   #        raise AssertionError("expected an exception")
 
-   def test_dictFalse(self):
-       try:
-           ppolicy = lcppolicy_cracklib.PPolicy(config_falsedict, cherrypy.log)
-       except RuntimeError:
-           return
-       else:
-           raise AssertionError("expected an exception")
+   #def test_dictFalse(self):
+   #    try:
+   #        ppolicy = lcppolicy_cracklib.PPolicy(config_falsedict, cherrypy.log)
+   #    except RuntimeError:
+   #        return
+   #    else:
+   #        raise AssertionError("expected an exception")
 
 
