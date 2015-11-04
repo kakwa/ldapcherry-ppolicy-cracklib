@@ -65,7 +65,7 @@ This plugin takes the following parameters in *ldapcherry.ini* (all the paramete
 | min_other  | ppolicy | Minimum number of non alphanumeric      | Integer | Default: 0                                   |
 |            |         | characters                              |         |                                              |
 +------------+---------+-----------------------------------------+---------+----------------------------------------------+
-| dict_path  | ppolicy | Path to dictionnary                     | Path    | Default: default cracklib dictionnary        |
+| dict_path  | ppolicy | Path to dictionary                      | Path    | Default: default cracklib dictionary         |
 |            |         |                                         |         | usually '/var/cache/cracklib/cracklib_dict'. |
 |            |         |                                         |         |                                              |
 |            |         |                                         |         | If pointing, for example, to */path/dict*,   |
@@ -108,7 +108,7 @@ To build custom cracklib dictionaries:
 
 * Get one or many word list files (for example here: http://www.winedt.org/Dict/)
 * If necessary encode it to UTF-8
-* Generate the cracklib dictionnary
+* Generate the cracklib dictionary
 
 example:
 
@@ -129,7 +129,7 @@ example:
     fr.zip: Zip archive data, at least v2.0 to extract
     $ iconv -f UTF-16 -t UTF-8 fr.dic >fr2.dic
 
-    # create the dictionnary
+    # create the dictionary
     $ cat fr2.dic | cracklib-packer mydict
 
     # result
