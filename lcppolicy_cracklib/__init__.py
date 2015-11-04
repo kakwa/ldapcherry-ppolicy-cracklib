@@ -91,5 +91,3 @@ class PPolicy(ldapcherry.ppolicy.PPolicy):
             return {'match': False, 'reason': 'Password ' + error}
         return {'match': True, 'reason': 'Password ok'}
 
-    def info(self):
-        return ""
