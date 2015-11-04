@@ -50,16 +50,20 @@ Add the following parameters in **[ppolicy]** section of ldapcherry.ini:
     
     # minimum password length (optional default: 0)
     min_length = 10
+
     # minimum number of upper case characters (optional default: 0)
     min_upper = 1
+
     # minimum number of digits (optional default: 0)
     min_digit = 1
+
     # minimum number of non alphanumeric characters (optional default: 0)
     min_other = 1
+
     # minimum number of lower case characters (optional default: 0)
     min_lower = 2
 
-    # path to dictionary
+    # path to dictionary (optional)
     dict_path = '/var/cache/cracklib/cracklib_dict'
 
 Custom dictionary
