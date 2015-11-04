@@ -40,6 +40,17 @@ From sources:
 Configure
 =========
 
+Enable module
+-------------
+
+To enable this module, set **ppolicy.module** to **lcppolicy_cracklib** in section **[ppolicy]**
+of *ldapcherry.ini*
+
+Parameters
+----------
+
+This plugin takes the following parameters in *ldapcherry.ini* (all the parameters are optional):
+
 +------------+---------+-----------------------------------------+---------+----------------------------------------------+
 | Parameter  | Section |            Description                  | Values  |                Comment                       |
 +============+=========+=========================================+=========+==============================================+
@@ -62,7 +73,8 @@ Configure
 |            |         |                                         |         | */path/dict.pwi* must exist.                 |
 +------------+---------+-----------------------------------------+---------+----------------------------------------------+
 
-Add the following parameters in **[ppolicy]** section of ldapcherry.ini:
+Example
+-------
 
 .. sourcecode:: ini
 
