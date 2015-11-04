@@ -68,8 +68,8 @@ This plugin takes the following parameters in *ldapcherry.ini* (all the paramete
 | dict_path  | ppolicy | Path to dictionnary                     | Path    | Default: default cracklib dictionnary        |
 |            |         |                                         |         | usually '/var/cache/cracklib/cracklib_dict'. |
 |            |         |                                         |         |                                              |
-|            |         |                                         |         | If pointing, for example, to */path/dict*    |
-|            |         |                                         |         | */path/dict.hwm*, */path/dict.pwd* and       |
+|            |         |                                         |         | If pointing, for example, to */path/dict*,   |
+|            |         |                                         |         | then */path/dict.hwm*, */path/dict.pwd* and  |
 |            |         |                                         |         | */path/dict.pwi* must exist.                 |
 +------------+---------+-----------------------------------------+---------+----------------------------------------------+
 
