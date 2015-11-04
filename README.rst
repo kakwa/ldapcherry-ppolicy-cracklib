@@ -21,3 +21,48 @@ Cracklib password policy plugin for LdapCherry
 .. image:: https://readthedocs.org/projects/ldapcherry-ppolicy-cracklib/badge/?version=latest
     :target: http://ldapcherry-ppolicy-cracklib.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
+
+Install
+=======
+
+From pypi:
+
+```
+pip install lcppolicy_cracklib
+```
+
+From sources:
+```
+python setup.py install
+```
+
+Configure
+=========
+
+Add the following parameters in **[ppolicy]** section of ldapcherry.ini:
+
+.. sourcecode:: ini
+
+    [ppolicy]
+
+    # password policy module
+    ppolicy.module = 'lcppolicy_cracklib'
+    
+    # minimum password length (optional default: 0)
+    min_length = 10
+    # minimum number of upper case characters (optional default: 0)
+    min_upper = 1
+    # minimum number of digits (optional default: 0)
+    min_digit = 1
+    # minimum number of non alphanumeric characters (optional default: 0)
+    min_other = 1
+    # minimum number of lower case characters (optional default: 0)
+    min_lower = 2
+
+    # path to dictionary
+    dict_path = '/var/cache/cracklib/cracklib_dict'
+
+Custom dictionary
+=================
+
+To build your own cracklib dictionary:

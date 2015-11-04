@@ -4,8 +4,7 @@ Contents
 .. toctree::
    :maxdepth: 4
 
-   deploy
-   config
+   index 
    changelog
 
 .. include:: ../README.rst
