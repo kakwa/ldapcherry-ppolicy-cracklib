@@ -27,14 +27,15 @@ Install
 
 From pypi:
 
-```
-pip install lcppolicy_cracklib
-```
+.. sourcecode:: bash
+
+    pip install lcppolicy_cracklib
 
 From sources:
-```
-python setup.py install
-```
+
+.. sourcecode:: bash
+
+    $ python setup.py install
 
 Configure
 =========
