@@ -13,7 +13,7 @@ python:
 #
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install python-cracklib libcrack2-dev
+  - sudo apt-get install libcrack2-dev
 install: 
   - "if [[ $TEST_PEP8 == '1' ]]; then pip install pep8; else pip install -e . ;fi"
   - pip install coveralls
