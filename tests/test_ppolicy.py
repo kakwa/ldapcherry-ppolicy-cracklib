@@ -137,7 +137,7 @@ class TestLib(object):
         password = 'isaword'
         ppolicy = lcppolicy_cracklib.PPolicy(config_dict, cherrypy.log)
         ret = ppolicy.check(password)
-        exp = {'match': False, 'reason': 'Password it is based on a dictionary word'}
+        exp = {'match': False, 'reason': 'Password is based on a dictionary word'}
         assert exp == ret
 
     #@travis_disabled

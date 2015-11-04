@@ -9,6 +9,7 @@ import ldapcherry.ppolicy
 import string
 import cracklib
 import sys
+import re
 from ldapcherry.exceptions import WrongParamValue
 
 DIFF_OK = 0
@@ -85,7 +86,9 @@ class PPolicy(ldapcherry.ppolicy.PPolicy):
         try:
             cracklib.VeryFascistCheck(password, dictpath=self.dict_path)
         except ValueError as e:
-            return {'match': False, 'reason': 'Password ' + str(e)}
+            error = str(e)
+            error = re.sub(r'^[iI][tT] ', '', error)
+            return {'match': False, 'reason': 'Password ' + error}
         return {'match': True, 'reason': 'Password ok'}
 
     def info(self):
