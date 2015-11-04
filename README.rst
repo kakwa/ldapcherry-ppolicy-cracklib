@@ -98,12 +98,6 @@ Example
 Custom dictionary
 =================
 
-.. warning::
-
-    Most distributions already provide dictionaries and a cron script
-    to update cracklib dictionary (see *apt-cache search 'dictionary' | egrep '^w'* 
-    and */etc/cron.daily/cracklib-runtime* in Debian/Ubuntu for example)
-
 To build custom cracklib dictionaries:
 
 * Get one or many word list files (for example here: http://www.winedt.org/Dict/)
@@ -135,5 +129,11 @@ example:
     # result
     $ ls mydict*
     mydict.hwm  mydict.pwd  mydict.pwi
+
+.. warning::
+
+    Most distributions already provide dictionaries and a cron script
+    to update cracklib dictionary (see '*apt-cache search 'dictionary' | egrep '^w'*' 
+    and '*/etc/cron.daily/cracklib-runtime*' in Debian/Ubuntu for example)
 
 
