@@ -9,6 +9,8 @@ import sys
 import lcppolicy_cracklib
 import cherrypy
 import logging
+import os
+from ldapcherry.exceptions import *
 
 def syslog_error(msg='', context='',
         severity=logging.INFO, traceback=False):
@@ -32,49 +34,110 @@ config = {
     'dict_path': None,
 }
 
+config_dict = {
+    'min_length': 0,
+    'min_upper': 0,
+    'min_lower': 0,
+    'min_digit': 0,
+    'min_other': 0,
+    'dict_path': os.getcwd() + '/tests/resources/dict',
+}
+
+config_falsedict = {
+    'min_length': 0,
+    'min_upper': 0,
+    'min_lower': 0,
+    'min_digit': 0,
+    'min_other': 0,
+    'dict_path': os.getcwd() + '/tests/resources/false_dict',
+}
+
+config_errordictpath = {
+    'min_length': 0,
+    'min_upper': 0,
+    'min_lower': 0,
+    'min_digit': 0,
+    'min_other': 0,
+    'dict_path': os.getcwd() + '/tests/resources/dict_not_exist',
+}
+
+config_errordictnotabspath = {
+    'min_length': 0,
+    'min_upper': 0,
+    'min_lower': 0,
+    'min_digit': 0,
+    'min_other': 0,
+    'dict_path': './tests/resources/dict_not_exist',
+}
+
+
 password = 'MzgzMDQw,NDgK3830.'
 
 class TestLib(object):
 
-        def test_base(self):
-            ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
-            ret = ppolicy.check(password)
-            exp = {'match': True, 'reason': 'Password ok'}
-            assert exp == ret
+   def test_base(self):
+       ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
+       ret = ppolicy.check(password)
+       exp = {'match': True, 'reason': 'Password ok'}
+       assert exp == ret
 
-        def test_upper(self):
-            password = 'mzgzmdqw,NDgk3830.'
-            ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
-            ret = ppolicy.check(password)
-            exp = {'match': False, 'reason': 'Password has not enough upper case characters'}
-            assert exp == ret
+   def test_upper(self):
+       password = 'mzgzmdqw,NDgk3830.'
+       ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
+       ret = ppolicy.check(password)
+       exp = {'match': False, 'reason': 'Password has not enough upper case characters'}
+       assert exp == ret
 
-        def test_lower(self):
-            password = 'QWENIHSYT,NDgk3830.'
-            ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
-            ret = ppolicy.check(password)
-            exp = {'match': False, 'reason': 'Password has not enough lower case characters'}
-            assert exp == ret
+   def test_lower(self):
+       password = 'QWENIHSYT,NDgk3830.'
+       ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
+       ret = ppolicy.check(password)
+       exp = {'match': False, 'reason': 'Password has not enough lower case characters'}
+       assert exp == ret
 
-        def test_digits(self):
-            password = 'QWENIHSYT,NDgkqa3p.'
-            ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
-            ret = ppolicy.check(password)
-            exp = {'match': False, 'reason': 'Password has not enough digits'}
-            assert exp == ret
+   def test_digits(self):
+       password = 'QWENIHSYT,NDgkqa3p.'
+       ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
+       ret = ppolicy.check(password)
+       exp = {'match': False, 'reason': 'Password has not enough digits'}
+       assert exp == ret
 
-        def test_other(self):
-            password = 'MzgzMDQw,NDgK3830p'
-            ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
-            ret = ppolicy.check(password)
-            exp = {'match': False, 'reason': 'Password has not enough non alphanumeric characters'}
-            assert exp == ret
+   def test_other(self):
+       password = 'MzgzMDQw,NDgK3830p'
+       ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
+       ret = ppolicy.check(password)
+       exp = {'match': False, 'reason': 'Password has not enough non alphanumeric characters'}
+       assert exp == ret
 
-        def test_other(self):
-            password = 'Mzaw,NDgK38p,'
-            ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
-            ret = ppolicy.check(password)
-            exp = {'match': False, 'reason': 'Password is too short'}
-            assert exp == ret
+   def test_other(self):
+       password = 'Mzaw,NDgK38p,'
+       ppolicy = lcppolicy_cracklib.PPolicy(config, cherrypy.log)
+       ret = ppolicy.check(password)
+       exp = {'match': False, 'reason': 'Password is too short'}
+       assert exp == ret
+
+   def test_dictNotAbsPath(self):
+       try:
+           ppolicy = lcppolicy_cracklib.PPolicy(config_errordictnotabspath, cherrypy.log)
+       except Exception as e:
+           assert str(e) == 'dict_path must be absolute, or not declared'
+       else:
+           raise AssertionError("expected an exception")
+
+   def test_dictDoesNotExist(self):
+       try:
+           ppolicy = lcppolicy_cracklib.PPolicy(config_errordictpath, cherrypy.log)
+       except OSError:
+           return
+       else:
+           raise AssertionError("expected an exception")
+
+   def test_dictFalse(self):
+       try:
+           ppolicy = lcppolicy_cracklib.PPolicy(config_falsedict, cherrypy.log)
+       except RuntimeError:
+           return
+       else:
+           raise AssertionError("expected an exception")
 
 
