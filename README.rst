@@ -111,9 +111,9 @@ Custom dictionary
 
 To build custom cracklib dictionaries:
 
-* Get one or many word list files (for example here: http://www.winedt.org/Dict/).
-* If necessary, encode it to UTF-8.
-* Generate the cracklib dictionary.
+#. Get one or many word list files (for example here: http://www.winedt.org/Dict/).
+#. If necessary, encode it to UTF-8.
+#. Generate the cracklib dictionary.
 
 example:
 
@@ -146,9 +146,8 @@ example:
     Most distributions already provide dictionaries and a cron script
     to update cracklib dictionary.
     
-    For example in Debian/Ubuntu:
+    For example in Debian/Ubuntu::
 
-    .. sourcecode:: bash
         # Search available dictionary
         $ apt-cache search 'dictionary' | egrep '^w'
 
