@@ -144,7 +144,14 @@ example:
 .. warning::
 
     Most distributions already provide dictionaries and a cron script
-    to update cracklib dictionary (see '*apt-cache search 'dictionary' | egrep '^w'*' 
-    and '*/etc/cron.daily/cracklib-runtime*' in Debian/Ubuntu for example)
+    to update cracklib dictionary.
+    
+    For example in Debian/Ubuntu:
+    .. sourcecode::
+        # Search available dictionary
+        $ apt-cache search 'dictionary' | egrep '^w'
 
+        # Take a look at the cron script and configuration
+        $ cat /etc/cron.daily/cracklib-runtime
+        $ cat /etc/cracklib/cracklib.conf
 
