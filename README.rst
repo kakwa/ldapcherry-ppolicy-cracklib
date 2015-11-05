@@ -32,7 +32,6 @@ Cracklib password policy plugin for LdapCherry
 
 ----
 
-
 Install
 =======
 
@@ -51,11 +50,41 @@ From sources:
 Configure
 =========
 
+Example
+-------
+
+In **ldapcherry.ini**:
+
+.. sourcecode:: ini
+
+    [ppolicy]
+
+    # password policy module
+    ppolicy.module = 'lcppolicy_cracklib'
+    # minimum password length (optional default: 0)
+    min_length = 10
+    # minimum number of upper case characters (optional default: 0)
+    min_upper = 1
+    # minimum number of lower case characters (optional default: 0)
+    min_lower = 2
+    # minimum number of digits (optional default: 0)
+    min_digit = 1
+    # minimum number of non alphanumeric characters (optional default: 0)
+    min_other = 1
+    # path to dictionary (optional)
+    dict_path = '/var/cache/cracklib/cracklib_dict'
+
 Enable module
 -------------
 
 To enable this module, set **ppolicy.module** to **lcppolicy_cracklib** in section **[ppolicy]**
-of *ldapcherry.ini*
+of *ldapcherry.ini*:
+
+.. sourcecode:: ini
+
+    [ppolicy]
+
+    ppolicy.module = 'lcppolicy_cracklib'
 
 Parameters
 ----------
@@ -76,35 +105,13 @@ This plugin takes the following parameters in *ldapcherry.ini* (all the paramete
 | min_other  | ppolicy | Minimum number of non alphanumeric      | Integer | Default: 0                                   |
 |            |         | characters                              |         |                                              |
 +------------+---------+-----------------------------------------+---------+----------------------------------------------+
-| dict_path  | ppolicy | Path to dictionary                      | Path    | Default: default cracklib dictionary         |
+| dict_path  | ppolicy | Path to dictionary                      | Path    | Default: default cracklib dictionary,        |
 |            |         |                                         |         | usually '/var/cache/cracklib/cracklib_dict'. |
 |            |         |                                         |         |                                              |
-|            |         |                                         |         | If pointing, for example, to */path/dict*,   |
-|            |         |                                         |         | then */path/dict.hwm*, */path/dict.pwd* and  |
-|            |         |                                         |         | */path/dict.pwi* must exist.                 |
+|            |         |                                         |         | If pointing, for example, to **/path/dict**, |
+|            |         |                                         |         | then **/path/dict.hwm**, **/path/dict.pwd**  |
+|            |         |                                         |         | and **/path/dict.pwi** must exist.           |
 +------------+---------+-----------------------------------------+---------+----------------------------------------------+
-
-Example
--------
-
-.. sourcecode:: ini
-
-    [ppolicy]
-
-    # password policy module
-    ppolicy.module = 'lcppolicy_cracklib'
-    # minimum password length (optional default: 0)
-    min_length = 10
-    # minimum number of upper case characters (optional default: 0)
-    min_upper = 1
-    # minimum number of lower case characters (optional default: 0)
-    min_lower = 2
-    # minimum number of digits (optional default: 0)
-    min_digit = 1
-    # minimum number of non alphanumeric characters (optional default: 0)
-    min_other = 1
-    # path to dictionary (optional)
-    dict_path = '/var/cache/cracklib/cracklib_dict'
 
 Custom dictionary
 =================
