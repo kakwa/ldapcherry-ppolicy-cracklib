@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# ascii_graph documentation build configuration file, created by
+# lcppolicy_cracklib documentation build configuration file, created by
 # sphinx-quickstart on Fri Aug 30 20:00:29 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,8 +40,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'ascii_graph'
-copyright = u'2012-2013 Pierre-Francois Carpentier'
+project = u'LdapCherry PPolicy Plugin'
+copyright = u'2015 Pierre-Francois Carpentier'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -99,7 +99,20 @@ autoclass_content = 'both'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'nature'
+
+# The name of an image file (relative to this directory) to place at the top
+# of the sidebar.
+html_logo = './assets/logo.png'
+
+# The name of an image file (within the static path) to use as favicon of the
+# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# pixels large.
+html_favicon = './assets/favicon.png'
+
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -128,7 +141,7 @@ html_theme = 'default'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['assets']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -173,7 +186,7 @@ html_last_updated_fmt = '%Y-%m-%d'
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ascii_graphdoc'
+htmlhelp_basename = 'lcppolicy_cracklibdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -192,7 +205,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'ascii_graph.tex', u'ascii\\_graph Documentation',
+  ('index', 'lcppolicy_cracklib.tex', u'ascii\\_graph Documentation',
    u'Author', 'manual'),
 ]
 
@@ -222,7 +235,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'ascii_graph', u'ascii_graph Documentation',
+    ('index', 'lcppolicy_cracklib', u'lcppolicy_cracklib Documentation',
      [u'Author'], 1)
 ]
 
@@ -236,8 +249,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'ascii_graph', u'ascii_graph Documentation',
-   u'Author', 'ascii_graph', 'One line description of project.',
+  ('index', 'lcppolicy_cracklib', u'lcppolicy_cracklib Documentation',
+   u'Author', 'lcppolicy_cracklib', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -257,10 +270,10 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'ascii_graph'
+epub_title = u'lcppolicy_cracklib'
 epub_author = u'Pierre-Francois Carpentier'
 epub_publisher = u'Pierre-Francois Carpentier'
-epub_copyright = u'2012-2013 Pierre-Francois Carpentier'
+epub_copyright = u'2015 Pierre-Francois Carpentier'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
