@@ -147,7 +147,8 @@ example:
     to update cracklib dictionary.
     
     For example in Debian/Ubuntu:
-    .. sourcecode::
+
+    .. sourcecode:: bash
         # Search available dictionary
         $ apt-cache search 'dictionary' | egrep '^w'
 
